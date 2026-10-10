@@ -10,7 +10,16 @@ class Program
             {
                 break;
             }
-            Console.WriteLine($"{command}: command not found");
+            else if(command.startsWith("echo "))
+            {
+                Console.WriteLine(command[5..]);
+                continue;
+            }
+            else
+            {
+                 Console.WriteLine($"{command}: command not found");
+
+            }
         }
     }
 }
