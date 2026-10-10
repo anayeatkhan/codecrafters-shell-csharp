@@ -10,7 +10,7 @@ class Program
             {
                 break;
             }
-            else if(command.startsWith("echo "))
+            else if(command.StartsWith("echo "))
             {
                 Console.WriteLine(command[5..]);
                 continue;
