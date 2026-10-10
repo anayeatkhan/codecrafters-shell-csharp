@@ -2,7 +2,7 @@ class Program
 {
     static void Main()
     {
-        List<string> builtInCommands = new List<string> { "echo", "type" };
+        List<string> builtInCommands = new List<string> { "echo", "type" , "exit" };
         while (true)
         {
             Console.Write("$ ");
@@ -19,8 +19,8 @@ class Program
             else if(command.StartsWith("type "))
             {
                 var checkCommand = command[5..];
-                var isBuiltin = builtInCommands.FirstOrDefault(t => t == checkCommand);
-                if(isBuiltin != null)
+                var isBuiltin = builtInCommands.Any(t => t == checkCommand);
+                if(!isBuiltin)
                 {
                     Console.WriteLine($"{checkCommand}: not found");
                 }
