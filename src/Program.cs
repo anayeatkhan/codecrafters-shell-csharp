@@ -18,15 +18,15 @@ class Program
             }
             else if(command.StartsWith("type "))
             {
-                var command = command[5..];
-                var isBuiltin = builtInCommands.FirstOrDefault(t => t == command);
+                var checkCommand = command[5..];
+                var isBuiltin = builtInCommands.FirstOrDefault(t => t == checkCommand);
                 if(isBuiltin != null)
                 {
-                    Console.WriteLine($"{command}: not found");
+                    Console.WriteLine($"{checkCommand}: not found");
                 }
                 else
                 {
-                    Console.WriteLine($"{command} is a shell builtin");
+                    Console.WriteLine($"{checkCommand} is a shell builtin");
                 }
             }
             else
